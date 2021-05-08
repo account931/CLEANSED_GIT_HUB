@@ -1,0 +1,30 @@
+{
+  "name": "encrypt_2019_common_js_browserify_core_gulp",
+  "version": "1.0.0",
+  "description": "JS crypto",
+  "main": "dist/js/bundle_js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-js": "browserify js/my_crypto_main_js_file.js > dist/js/bundle_js.js -d",
+    "watch-js": "watchify js/my_crypto_main_js_file.js -o dist/js/bundle_js.js -dv"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "jquery": "^3.6.0",
+    "sweetalert": "^2.1.2",
+    "underscore": "^1.9.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "browserify": "latest",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglifyjs": "^0.6.2",
+    "vinyl-buffer": "^1.0.1",
+    "watchify": "latest"
+  }
+}
