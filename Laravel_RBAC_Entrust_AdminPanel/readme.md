@@ -8,8 +8,8 @@
 - <p>Then use <b> php artisan migrate </b> to migrate databases</p>
 - <p>If Entrust migration did not run automatically, run additional command  <b> php artisan entrust:migration </b> to generate the Entrust migration</p>
 - <p>When the migration is completed, run the seeding command <b> php artisan db:seed </b> to seed the dummy data, after you may login using login: <b>test@gmail.com</b>, password: <b>testtest</b>. </p>
-- <p>Js assets are minified and concatenated with Laravel Mix, source code is in <b>/resources/assets</b>, to manage JS dependencies run <b>npm install</b>, to minify js files run <b>npm run production</b>, to automate your build when there is any change use <b>npm run watch </b>
-- <p>If encounter error <b>"cross-env not found"</b> , firstly run command <b>npm i cross-env --save</b> </p>
+- <p>Js assets are minified and concatenated with Laravel Mix, source code is in <b>/resources/assets</b>, to manage JS dependencies run <b>npm install</b>, to minify js files run <b>npm run production</b>, to automate your build when there is any change use <b>npm run watch </b></p>
+- <p>If encounter error <b> cross-env not found </b> , firstly run command <b>npm i cross-env --save</b> </p>
 - [Zizaco/Entrust documentation](https://github.com/Zizaco/entrust)  
 
 
@@ -55,7 +55,6 @@
 
 ![Screenshot](public/images/Screenshots/13.png)
 
-[Watch video presentation on Youtube]( https://youtu.be/CoS-ETa-Uto )
  
   ## Zizaco/Entrust works using 4 tables
 - <p><b> roles </b> — stores role records </p>

@@ -2544,7 +2544,7 @@
       }
 
       if (this._isBodyOverflowing && !isModalOverflowing) {
-        this._element.style.paddingRight = this._scrollbarWidth + "px"9
+        this._element.style.paddingRight = this._scrollbarWidth + "px";
       }
     };
 

@@ -1,0 +1,55 @@
+/*--------- WPRESS Blog on Vue.JS Admin Part    */
+
+
+/* Fix => Class with z-index is a fix for non-working click in mobile  */
+.fix-for-non-working-click-in-mobile {
+	position:relative; z-index:9;
+}
+	
+
+
+
+.vue-logo{width:12%; border: 1px solid black;}
+
+
+/* -- Loader */
+.loader-x  {position:absolute; top:16em; left:40em;width:99%; display:none;}
+.loader-x img {width:13%;}
+
+/* ---------------------------------------- Mobile */
+@media screen and (max-width: 480px) { 
+  .loader-x  {position:absolute; top:16em; left:8em; width:99%;}
+  .loader-x img {width:43%;}  
+}
+ 
+
+
+/* ---- Shadow CSS */
+.shadowX {
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
+            -23px 0 20px -23px rgba(0, 0, 0, .6),
+            23px 0 20px -23px rgba(0, 0, 0, .6),
+            inset 0 0 40px rgba(0, 0, 0, .1);
+			border-radius:15px;
+}
+
+.shadowX-2 {-moz-box-shadow: inset 0px 0px 47px 3px #4c3f37; -webkit-box-shadow: inset 0px 0px 47px 3px #4c3f37; box-shadow: inset 0px 0px 277px 3px #4c3f37; }
+.shadowX-3 {box-shadow: 0 1px 4px rgba(0, 0, 0, .3), -23px 0 20px -23px rgba(0, 0, 0, .6), 23px 0 20px -23px rgba(0, 0, 0, .6), inset 0 0 40px rgba(0, 0, 0, .1); }
+
+
+.img-wpblog{ width:7%;}
+
+
+/* Z-index fixes*/
+.z-overlay-fix-2{ position:relative; z-index:2;}
+.z-overlay-3{ position:relative; z-index:999;}
+
+.my-adm-img  {width:20%;} /* blog main image */
+
+/* One Blog view*/
+.oneAdminPost{
+    border:1px solid black;
+    margin-bottom:2em;
+    padding: 2em 1em;
+    border-radius: 10px;
+}

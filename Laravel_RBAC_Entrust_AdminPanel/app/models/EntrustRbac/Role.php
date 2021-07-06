@@ -10,77 +10,6 @@ use App\models\EntrustRbac\My_rbac\Role_User; //model for DB table Role_User. us
 
 class Role extends EntrustRole
 {
-	//for test only!!!!!!!!!!!!!!!
-	//creates roles in DB (to create roles manually, must be run by admin one time only)
-	public function setup() 
-    {
-		$roleOwner =  self::where('name', 'owner')->get();
-		if (!$roleOwner){ //if doesnot exist
-		    $owner = new Role();
-            $owner->name         = 'owner';
-            $owner->display_name = 'Project Owner'; // optional
-            $owner->description  = 'User is the owner of a given project'; // optional
-            $owner->save();
-		}
-		
-    
-        $roleAdmin =  self::where('name', 'admin')->get();
-		if (!$roleAdmin){ //if doesnot exist
-            $admin = new Role();
-            $admin->name         = 'admin';
-            $admin->display_name = 'User Administrator'; // optional
-            $admin->description  = 'User is allowed to manage and edit other users'; // optional
-            $admin->save();
-		}
-
-        $roleManager =  self::where('name', 'manager')->get();
-		if (!$roleManager){ //if doesnot exist
-           $manager = new Role();
-           $manager->name         = 'manager';
-           $manager->display_name = 'Company Manager'; // optional
-           $manager->description  = 'User is a manager of a Department'; // optional
-           $manager->save();
-		} else {
-			dd('Roles exist');}
-    }
-
-   /*
-	function test(){
-		
-		$ownerX = new Role();
-        $ownerX->name         = 'ownerX';
-        $ownerX->display_name = 'Project Owner'; // optional
-        $ownerX->description  = 'User is the ownerX of a given project'; // optional
-        $ownerX->save();
-
-        $adminX = new Role();
-        $adminX->name         = 'adminX';
-        $adminX->display_name = 'User AdministratorX'; // optional
-        $adminX->description  = 'User is allowed to manage and edit other users'; // optional
-        $adminX->save();
-		
-		
-		//attach role to user
-	   $user = User::where('id', '=', 2)->first();
-       
-       // role attach alias
-       $user->attachRole($adminX); // parameter can be an Role object, array, or id
-	} 
-	*/
-	
-	//for test only!!!!!!!!!!!!!!!!!!!!!!
-	public function assign() 
-    {
-	   $user = User::find(\Auth::user()->id );
-       // role attach alias
-       //$user->attachRole('admin'); // parameter can be an Role object, array, or id
-	   $admin_role = self::where('name', 'admin')->get()->first();
-	   $user->roles()->attach($admin_role);
-	   dd("Great");
-	}
-	
-	
-	
 	
 	/**
      * method to assign a selected user with selected role (assigned from Entrust Rbac Admin Panel table)
@@ -141,6 +70,53 @@ class Role extends EntrustRole
 			return false;
 		}
 
+	}
+    
+    
+    //for test only!
+	//creates roles in DB (to create roles manually, must be run by admin one time only)
+	public function setup() 
+    {
+		$roleOwner =  self::where('name', 'owner')->get();
+		if (!$roleOwner){ //if doesnot exist
+		    $owner = new Role();
+            $owner->name         = 'owner';
+            $owner->display_name = 'Project Owner'; // optional
+            $owner->description  = 'User is the owner of a given project'; // optional
+            $owner->save();
+		}
+		
+    
+        $roleAdmin =  self::where('name', 'admin')->get();
+		if (!$roleAdmin){ //if doesnot exist
+            $admin = new Role();
+            $admin->name         = 'admin';
+            $admin->display_name = 'User Administrator'; // optional
+            $admin->description  = 'User is allowed to manage and edit other users'; // optional
+            $admin->save();
+		}
+
+        $roleManager =  self::where('name', 'manager')->get();
+		if (!$roleManager){ //if doesnot exist
+           $manager = new Role();
+           $manager->name         = 'manager';
+           $manager->display_name = 'Company Manager'; // optional
+           $manager->description  = 'User is a manager of a Department'; // optional
+           $manager->save();
+		} else {
+			dd('Roles exist');}
+    }
+
+	
+	//for test only!!!!!!!!!!!!!!!!!!!!!!
+	public function assign() 
+    {
+	   $user = User::find(\Auth::user()->id );
+       // role attach alias
+       //$user->attachRole('admin'); // parameter can be an Role object, array, or id
+	   $admin_role = self::where('name', 'admin')->get()->first();
+	   $user->roles()->attach($admin_role);
+	   dd("Great");
 	}
 	
 	
