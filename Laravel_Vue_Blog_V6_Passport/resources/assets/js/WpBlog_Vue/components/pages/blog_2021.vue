@@ -15,6 +15,13 @@
         <!--------- Authorized/Logged Section ----------> 
         <div v-else-if="this.$store.state.passport_api_tokenY != null">
         
+		    <!-- If there is no blog records so far ----->
+			<div v-if="posts.length == 0"> 
+                <hr>			
+			    <p class="text-danger">No records found so far</p>
+			</div>
+			<!-- End If there is no blog records so far -->
+			
             <div class="row">
                 <!-- Displays post articles from Vuex Store /store/index.js -->
                 <div v-for="(post, i) in posts" :key=i> <!-- or this.$store.state.posts -->
@@ -127,10 +134,9 @@
                //run ajax in Vuex store
                //console.log('BeforeMount: Making ajax is authorized');
                 this.$store.dispatch('getAllPosts'); //trigger ajax function getAllPosts(), which is executed in Vuex store to REST Endpoint => /public/post/get_all
-	        } else{
+			} else{
                 console.log("BeforeMount: Alreday loaded");
             }
-            
         },
   
   

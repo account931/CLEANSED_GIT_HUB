@@ -152,9 +152,9 @@ class Wpress_images_Posts extends Model
 	public function updatePostItem($idX, $request)
     {
         self::where('wpBlog_id', $idX)->update([ 
-		    'wpBlog_text' => $request->title, 
-			'wpBlog_title' => $request->body, 
-			'wpBlog_category' => $request->selectV  
+		    'wpBlog_text'     =>  $request->body, 
+			'wpBlog_title'    =>  $request->title,
+			'wpBlog_category' =>  $request->selectV  
 		]);
         
         //return string to construct a json response

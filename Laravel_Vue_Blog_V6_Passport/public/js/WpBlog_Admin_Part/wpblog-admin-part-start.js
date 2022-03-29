@@ -81219,7 +81219,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -81233,6 +81233,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__subcomponents_you_are_not_logged_vue__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__subcomponents_you_are_not_logged_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__subcomponents_you_are_not_logged_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -81305,10 +81314,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     beforeMount: function beforeMount() {
-        /*		
-        let token = document.head.querySelector('meta[name="csrf-token"]'); //gets meta tag with csrf //NOT USED in Passpor
-        this.tokenXX = token.content; //gets csrf token and sets it to data.tokenXX //NOT USED in Passport
-        */
 
         //Passport token check
         if (this.$store.state.passport_api_tokenY == null) {
@@ -81697,92 +81702,109 @@ var render = function() {
       : this.$store.state.passport_api_tokenY != null
       ? _c(
           "div",
-          _vm._l(_vm.booksGet, function(postAdmin, i) {
-            return _c(
-              "div",
-              {
-                key: i,
-                staticClass: "col-sm-12 col-xs-12 oneAdminPost",
-                attrs: { id: postAdmin.wpBlog_id }
-              },
-              [
-                _c("p", [_vm._v(" " + _vm._s(postAdmin.wpBlog_title) + " ")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    " " + _vm._s(_vm.truncateText(postAdmin.wpBlog_text)) + " "
-                  )
-                ]),
-                _vm._v(" "),
-                postAdmin.get_images.length
-                  ? _c(
-                      "a",
+          [
+            _vm.booksGet.length == 0
+              ? _c("div", [
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-danger" }, [
+                    _vm._v("No records found so far")
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.booksGet, function(postAdmin, i) {
+              return _c(
+                "div",
+                {
+                  key: i,
+                  staticClass: "col-sm-12 col-xs-12 oneAdminPost",
+                  attrs: { id: postAdmin.wpBlog_id }
+                },
+                [
+                  _c("p", [_vm._v(" " + _vm._s(postAdmin.wpBlog_title) + " ")]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      " " +
+                        _vm._s(_vm.truncateText(postAdmin.wpBlog_text)) +
+                        " "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  postAdmin.get_images.length
+                    ? _c(
+                        "a",
+                        {
+                          attrs: {
+                            href:
+                              "images/wpressImages/" +
+                              postAdmin.get_images[0].wpImStock_name,
+                            title: "image",
+                            "data-lightbox": "roadtrip" + postAdmin.wpBlog_id
+                          }
+                        },
+                        [
+                          postAdmin.get_images.length
+                            ? _c("img", {
+                                staticClass: "card-img-top my-adm-img",
+                                attrs: {
+                                  src:
+                                    "images/wpressImages/" +
+                                    postAdmin.get_images[0].wpImStock_name
+                                },
+                                on: { error: _vm.imageUrlAlt }
+                              })
+                            : _vm._e()
+                        ]
+                      )
+                    : _c("img", {
+                        staticClass: "card-img-top my-img",
+                        attrs: { src: "images/no-image-found.png" }
+                      }),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c(
+                      "button",
                       {
-                        attrs: {
-                          href:
-                            "images/wpressImages/" +
-                            postAdmin.get_images[0].wpImStock_name,
-                          title: "image",
-                          "data-lightbox": "roadtrip" + postAdmin.wpBlog_id
+                        staticClass: "btn btn-success",
+                        staticStyle: { "font-size": "19px" },
+                        on: {
+                          click: function($event) {
+                            return _vm.goToEditDetail(postAdmin.wpBlog_id)
+                          }
                         }
                       },
                       [
-                        postAdmin.get_images.length
-                          ? _c("img", {
-                              staticClass: "card-img-top my-adm-img",
-                              attrs: {
-                                src:
-                                  "images/wpressImages/" +
-                                  postAdmin.get_images[0].wpImStock_name
-                              },
-                              on: { error: _vm.imageUrlAlt }
-                            })
-                          : _vm._e()
+                        _vm._v("Edit "),
+                        _c("i", { staticClass: "fa fa-pencil" })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger",
+                        staticStyle: { "font-size": "19px" },
+                        on: {
+                          click: function($event) {
+                            return _vm.deletePost(postAdmin.wpBlog_id)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(" Delete  "),
+                        _c("i", { staticClass: "fa fa-trash-o" })
                       ]
                     )
-                  : _c("img", {
-                      staticClass: "card-img-top my-img",
-                      attrs: { src: "images/no-image-found.png" }
-                    }),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("p", [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success",
-                      staticStyle: { "font-size": "19px" },
-                      on: {
-                        click: function($event) {
-                          return _vm.goToEditDetail(postAdmin.wpBlog_id)
-                        }
-                      }
-                    },
-                    [_vm._v("Edit "), _c("i", { staticClass: "fa fa-pencil" })]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-danger",
-                      staticStyle: { "font-size": "19px" },
-                      on: {
-                        click: function($event) {
-                          return _vm.deletePost(postAdmin.wpBlog_id)
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(" Delete  "),
-                      _c("i", { staticClass: "fa fa-trash-o" })
-                    ]
-                  )
-                ])
-              ]
-            )
-          }),
-          0
+                  ])
+                ]
+              )
+            })
+          ],
+          2
         )
       : _vm._e()
   ])

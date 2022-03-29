@@ -14,6 +14,15 @@
 		<!--------- Authorized/Logged Section ----------> 
         <div v-else-if="this.$store.state.passport_api_tokenY != null">
         
+		
+		    <!-- If there is no blog records so far ----->
+			<div v-if="booksGet.length == 0"> 
+                <hr>			
+			    <p class="text-danger">No records found so far</p>
+			</div>
+			<!-- End If there is no blog records so far -->
+			
+			
             <!-- V loop over ajax success data -->
             <div v-for="(postAdmin, i) in booksGet" :key=i class="col-sm-12 col-xs-12 oneAdminPost" :id="postAdmin.wpBlog_id"> 
                 <p> {{postAdmin.wpBlog_title}} </p>
@@ -69,11 +78,7 @@
         
 
         beforeMount() {
-            /*		
-            let token = document.head.querySelector('meta[name="csrf-token"]'); //gets meta tag with csrf //NOT USED in Passpor
-	        this.tokenXX = token.content; //gets csrf token and sets it to data.tokenXX //NOT USED in Passport
-			*/
-			
+      
 			//Passport token check
             if(this.$store.state.passport_api_tokenY == null){
                 swal("List_all says: Access denied", "You are not logged", "error");

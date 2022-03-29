@@ -81357,6 +81357,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 //using other sub-component 
@@ -81596,6 +81603,16 @@ var render = function() {
       ? _c(
           "div",
           [
+            _vm.posts.length == 0
+              ? _c("div", [
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-danger" }, [
+                    _vm._v("No records found so far")
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
             _c(
               "div",
               { staticClass: "row" },
