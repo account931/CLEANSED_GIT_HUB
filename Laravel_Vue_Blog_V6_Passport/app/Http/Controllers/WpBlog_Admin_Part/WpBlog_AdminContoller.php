@@ -19,9 +19,7 @@ class WpBlog_AdminContoller extends Controller
 {
     public function __construct(){
 		//$this->middleware('checkX');
-		   
 	}
-	
 	
 	
 	/**
@@ -31,15 +29,17 @@ class WpBlog_AdminContoller extends Controller
      */
     public function index()
     {
-        //if so far no api_token field in {User table}
-        if(auth()->user()->api_token == null){
-            return redirect('/getToken')->with('flashMessageFailX', 'Redirected here as no api_token was found. Please generate');
-        }
-        
-        //gets current user Db table field {api_token}
-		$myDBToken = auth()->user()->api_token;
-        
-        return view('wpBlog_Admin_Part.index')->with(compact('myDBToken'));
+		/*
+		dd(Auth::guard('api')->user());
+		//dd(auth()->user());
+		//dd($request->bearerToken()->first());
+		$authedUser = Auth::user(); //getting the logged user Object, version for Passport
+		dd($authedUser);
+        if(!$authedUser->hasAllPermissions(['edit articles', 'delete articles',])){ 
+		    throw new \App\Exceptions\myException('No rbac rights');
+		}
+		*/
+        return view('wpBlog_Admin_Part.index');
     }
         
 }

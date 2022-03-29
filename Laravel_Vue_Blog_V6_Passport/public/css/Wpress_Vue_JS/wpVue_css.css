@@ -16,8 +16,10 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 
 
-.vue-logo{width:12%; border: 1px solid black;}
-.my-img  {width:70%;} /* blog main image */
+.vue-logo      {width:12%; border: 1px solid black;}
+.my-img        {width:70%;} /* blog main image */
+.my-img-small  {width:40%;} /* detailed one view */
+.my-img-tiny   {width:10%;} /* images in view post in modal pop-up */
 
 /* -- Loader */
 .loader-x  {position:absolute; top:16em; left:40em;width:99%; display:none;}

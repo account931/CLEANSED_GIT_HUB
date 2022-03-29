@@ -14,10 +14,10 @@ class CreateWpressImageCategoryTable extends Migration
     public function up()
     {
       //
-	  if (!Schema::hasTable('wpressImage_category')) { //my fix for migration
+	  if (!Schema::hasTable('wpressImage_category')) { 
 		Schema::create('wpressImage_category', function (Blueprint $table) {
             $table->increments('wpCategory_id');
-			$table->string('wpCategory_name', 77)->nullable();  //Эквивалент VARCHAR с длинной 222 // ->nullable()  is a fix
+			$table->string('wpCategory_name', 77)->nullable(); 
             $table->timestamps();
         });
 	  }

@@ -4,11 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
-//mine
- use Illuminate\Support\Facades\Session; //MINE to redirect to prev page after Login
- //use Illuminate\Support\Facades\URL;
-
+use Illuminate\Support\Facades\Session; //MINE to redirect to prev page after Login
 
 class LoginController extends Controller
 {
@@ -30,8 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home'; //MINE to redirect to prev page after Login
-	
+    protected $redirectTo = '/home'; //to redirect to prev page after Login
 	
 
     /**
@@ -42,33 +37,23 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-		//MINE to redirect to prev page after Login
-		Session::put('backUrl', url()->previous()); //dd(session()->get('backUrl')); Here we save previous page to SESSION['backUrl']
+		//to redirect to prev page after Login
+		Session::put('backUrl', url()->previous());
 		
     }
 	
-	
-	
-
-    //MINE added function to redirect to prev page after Login. Was not in original file
+    
+	/**
+     * Function to redirect to prev page after Login
+     *
+     * @return void
+     */
     public function redirectTo()
     {
-	   //dd(session()->get('backUrl'));
        return session()->get('backUrl') ? session()->get('backUrl') :   $this->redirectTo; //if SESSION['backUrl'] is set, go there, else go "/home"
     }
 	
 	
-	/**
-	 * Method if u want to Login with username instead of email. Don't change the function name, regadless what u want to return, i.e "email, name, username" 
-     * Get username property.
-     *
-     * @return string
-     */
-	 /*
-    public function username()
-    {
-        return 'name'; //or return the DB  field which you want to use, i.e "email, name, username"
-    }
-	*/
+
 
 }

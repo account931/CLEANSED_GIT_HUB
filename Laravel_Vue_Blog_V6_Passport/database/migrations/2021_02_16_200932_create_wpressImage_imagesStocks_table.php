@@ -14,10 +14,10 @@ class CreateWpressImageImagesStocksTable extends Migration
     public function up()
     {
         //
-		if (!Schema::hasTable('wpressImage_ImagesStock')) { //my fix for migration
+		if (!Schema::hasTable('wpressImage_ImagesStock')) { 
 		    Schema::create('wpressImage_ImagesStock', function (Blueprint $table) {
                 $table->increments('wpImStock_id');
-			    $table->string('wpImStock_name', 77)->nullable();  //Эквивалент VARCHAR с длинной 222 // ->nullable()  is a fix
+			    $table->string('wpImStock_name', 77)->nullable();  //equivalent VARCHAR  222 // ->nullable() 
             
 			    //Create Foreign key for table {wpressImages_blog_posts}	
 			    $table->integer('wpImStock_postID')->unsigned()->nullable()->comment = 'Author ID';

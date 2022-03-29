@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Wpress_images_Category extends Model
 {
-    //
-	  /**
-   * Связанная с моделью таблица.
+ /**
+   * Connected DB table name.
    *
    * @var string
    */

@@ -1,9 +1,13 @@
 /* main menu link color */
-.black a {color:black !important;;}
+.black a {
+	color:black !important;
+}
 
 
 /* Home page CPH image */
-.my-cph {width:24%; padding:1em; border: 1px solid black;}
+.my-cph {
+	width:24%; padding:1em; border: 1px solid black;
+}
  
  /* Mobile */
  @media screen and (max-width: 480px) { 
@@ -14,7 +18,9 @@
  
  
  /* image for wp blog entries */
- .img-wpblog{width:15%; padding:1em;}
+.img-wpblog {
+	 width:15%; padding:1em;
+}
  
  
  /* Mobile */
@@ -26,7 +32,6 @@
  
   /*--------------------------- WPRESS Blog */
   .text-hidden{display:none;}
- 
   .text-truncated, .text-hidden{cursor:pointer;}
   .text-truncated:hover{color:red;}
   .deletee {width:2em;} /* delete icon */
