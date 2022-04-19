@@ -253,6 +253,7 @@
                 
                         if(data.error == true ){ //if Rest endpoint returns any predefined error
                             var text = data.data;
+							that.showNotification(text);
                             swal("Check", text, "error");
               
                         //if OK

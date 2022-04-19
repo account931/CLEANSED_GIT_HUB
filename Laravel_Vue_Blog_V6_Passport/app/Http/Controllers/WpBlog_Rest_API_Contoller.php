@@ -32,6 +32,14 @@ class WpBlog_Rest_API_Contoller extends Controller
     }
 	
 	
+	/**
+     * View one article 
+     * no method for "View one article", view one record is extracted from Vuex store (this.$store.state.posts[this.currentDetailID].wpBlog_title)
+     *
+     *	 
+     */
+	 
+	 
 	
 	/**
      * REST API to /POST (create) a new blog. 
